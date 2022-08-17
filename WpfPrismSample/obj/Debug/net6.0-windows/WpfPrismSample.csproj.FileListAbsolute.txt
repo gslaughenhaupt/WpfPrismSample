@@ -25,3 +25,4 @@ C:\Users\gary\source\repos\WpfPrismSample\WpfPrismSample\obj\Debug\net6.0-window
 C:\Users\gary\source\repos\WpfPrismSample\WpfPrismSample\obj\Debug\net6.0-windows\Styles\Styles.baml
 C:\Users\gary\source\repos\WpfPrismSample\WpfPrismSample\obj\Debug\net6.0-windows\WpfPrismSample_MarkupCompile.lref
 C:\Users\gary\source\repos\WpfPrismSample\WpfPrismSample\obj\Debug\net6.0-windows\App.baml
+C:\Users\gary\source\repos\WpfPrismSample\WpfPrismSample\obj\Debug\net6.0-windows\Styles\Colors.baml

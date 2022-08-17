@@ -14,6 +14,8 @@
         <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Left">
             <TextBlock Text="{Binding LongText}" Style="{StaticResource SubduedText}"  Margin="8" />
             <TextBlock Text="{Binding AlertText}" Style="{StaticResource AlertText}" Margin="8" />
+
+            <Button Content="Click Here" Style="{StaticResource ShopButton}" HorizontalAlignment="Center"/>
         </StackPanel>
 
     </Grid>

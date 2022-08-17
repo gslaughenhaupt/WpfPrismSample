@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\gary\source\repos\WpfPrismSample\WpfPrismSample\App.xaml
-2-1990931349
+31620447145
 
 6-126474999
 197121335560
-Styles\Styles.xaml;View\MainWindow.xaml;
+Styles\Colors.xaml;Styles\Styles.xaml;View\MainWindow.xaml;
 
-False
+True
 
