@@ -182,16 +182,16 @@
         <Setter Property="SnapsToDevicePixels" Value="true" />
         <Setter Property="OverridesDefaultStyle" Value="true" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}" />
-        <Setter Property="MinHeight" Value="27" />
+        <Setter Property="MinHeight" Value="30" />
         <Setter Property="Height" Value="Auto" />
-        <Setter Property="MinWidth" Value="75" />
+        <Setter Property="MinWidth" Value="50" />
         <Setter Property="Cursor" Value="Hand" />
         <Setter Property="Foreground" Value="{DynamicResource GoldButtonForeground}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border
-                        x:Name="Border" Background="{DynamicResource SecondayButton_Button_BG}" BorderBrush="{DynamicResource GoldButtonForeground}" BorderThickness="1" CornerRadius="2">
+                        x:Name="Border" Background="{DynamicResource BetaButton_Button_BG}" BorderBrush="{DynamicResource GoldButtonForeground}" BorderThickness="1" CornerRadius="2">
                         <TextBlock
                             Name="ButtonText" Margin="16,8" HorizontalAlignment="Center" VerticalAlignment="Center" AutomationProperties.Name="{Binding Source=Self, Path=Text}"
                             FocusManager.IsFocusScope="True" Focusable="True" FontFamily="Arial" FontSize="12" FontWeight="Bold" Foreground="{DynamicResource GoldButtonForeground}"
@@ -204,7 +204,7 @@
                             <Setter TargetName="Border" Property="Background" Value="{DynamicResource GoldButtonForeground}" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource SecondaryPressed_ButtonBG}" />
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource BetaPressed_ButtonBG}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

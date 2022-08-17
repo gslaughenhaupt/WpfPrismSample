@@ -3,30 +3,30 @@
     <Color x:Key="Gold">#FFD700</Color>
     <SolidColorBrush x:Key="GoldButtonForeground" Color="{StaticResource Gold}" />
     <SolidColorBrush x:Key="GoldButtonForegroundHover" Color="#181818" />
-    
-    <Color x:Key="SecondaryDefaultBackground">Transparent</Color>
-    <Color x:Key="SecondaryDefaultForground">#FFD8D8D8</Color>
-    <Color x:Key="SecondaryHoverBackground">#FF292929</Color>
-    <Color x:Key="SecondaryHoverForground">#FFFFFFFF</Color>
-    <Color x:Key="SecondaryPressedBackground">#FF262626</Color>
-    <Color x:Key="SecondaryPressedForground">#FF9B9B9B</Color>
-    <Color x:Key="SecondaryDisabledBackground">#FF212121</Color>
-    <Color x:Key="SecondaryDisabledForground">#FF808080</Color>
-    <Color x:Key="SecondaryDefaultBorder">#FFD8D8D8</Color>
-    <Color x:Key="SecondaryHoverBorder">#FFFFFFFF</Color>
-    <Color x:Key="SecondaryPressedBorder">#FF9B9B9B</Color>
-    <Color x:Key="SecondaryDisabledBorder">#FF808080</Color>
+
+    <Color x:Key="BetaDefaultBackground">Transparent</Color>
+    <Color x:Key="BetaDefaultForground">#FFD8D8D8</Color>
+    <Color x:Key="BetaHoverBackground">#FF292929</Color>
+    <Color x:Key="BetaHoverForground">#FFFFFFFF</Color>
+    <Color x:Key="BetaPressedBackground">#FF262626</Color>
+    <Color x:Key="BetaPressedForground">#FF9B9B9B</Color>
+    <Color x:Key="BetaDisabledBackground">#FF212121</Color>
+    <Color x:Key="BetaDisabledForground">#FF808080</Color>
+    <Color x:Key="BetaDefaultBorder">#FFD8D8D8</Color>
+    <Color x:Key="BetaHoverBorder">#FFFFFFFF</Color>
+    <Color x:Key="BetaPressedBorder">#FF9B9B9B</Color>
+    <Color x:Key="BetaDisabledBorder">#FF808080</Color>
     <!--#region SecondaryButton Style-->
-    <SolidColorBrush x:Key="SecondayButton_Button_BG" Color="Transparent" />
-    <SolidColorBrush x:Key="SecondaryPressed_ButtonBG" Color="#FF262626" />
-    <SolidColorBrush x:Key="SecondaryHover_ButtonFG" Color="#FFD8D8D8" />
-    <SolidColorBrush x:Key="SecondaryHover_ButtonBorderBrush" Color="#FFFFFFFF" />
-    <SolidColorBrush x:Key="SecondaryHover_ButtonBackgroundBrush" Color="#FF292929" />
-    <SolidColorBrush x:Key="SecondaryDisabled_ButtonFG" Color="{StaticResource SecondaryDisabledForground}" />
-    <SolidColorBrush x:Key="SecondaryDisabled_ButtonBG" Color="{StaticResource SecondaryDisabledBackground}" />
-    <SolidColorBrush x:Key="SecondaryDisabled_BorderBrush" Color="{StaticResource SecondaryDisabledBorder}" />
-    <SolidColorBrush x:Key="SecondaryDefaultForgroundBrush" Color="#FFD8D8D8" />
-    <SolidColorBrush x:Key="SecondaryDefaultBorderBrush" Color="#FFD8D8D8" />
+    <SolidColorBrush x:Key="BetaButton_Button_BG" Color="Transparent" />
+    <SolidColorBrush x:Key="BetaPressed_ButtonBG" Color="#FF262626" />
+    <SolidColorBrush x:Key="BetaHover_ButtonFG" Color="#FFD8D8D8" />
+    <SolidColorBrush x:Key="BetaHover_ButtonBorderBrush" Color="#FFFFFFFF" />
+    <SolidColorBrush x:Key="BetaHover_ButtonBackgroundBrush" Color="#FF292929" />
+    <SolidColorBrush x:Key="BetaDisabled_ButtonFG" Color="{StaticResource SecondaryDisabledForground}" />
+    <SolidColorBrush x:Key="BetaDisabled_ButtonBG" Color="{StaticResource SecondaryDisabledBackground}" />
+    <SolidColorBrush x:Key="BetaDisabled_BorderBrush" Color="{StaticResource SecondaryDisabledBorder}" />
+    <SolidColorBrush x:Key="BetaDefaultForgroundBrush" Color="#FFD8D8D8" />
+    <SolidColorBrush x:Key="BetaDefaultBorderBrush" Color="#FFD8D8D8" />
     <!--#endregion-->
     <!--Control colors.-->
     <Color x:Key="WindowColor">#FFE8EDF9</Color>
