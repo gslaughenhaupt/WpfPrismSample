@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Ey/ozoYRi6uwcl7Zqj8j5FimkVBPp9j9FwIRk9OSfv/5cu3XzbrW9d6Bdq9PCIAJhPiTYrtOsfhuzqoeN685ow==",
+  "dgSpecHash": "qZz70SMVBzEUJ7TL4+aNYEyusu25c10u/lXdTDT/fZSyeC6DJkusoCBjzw8yL9DiTyc7owOQfMJidl3/9/XI6Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\gary\\source\\repos\\WpfPrismSample\\WpfPrismSample\\WpfPrismSample.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gary\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.31\\microsoft.xaml.behaviors.wpf.1.1.31.nupkg.sha512",
+    "C:\\Users\\gary\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\gary\\.nuget\\packages\\prism.core\\8.1.97\\prism.core.8.1.97.nupkg.sha512",
     "C:\\Users\\gary\\.nuget\\packages\\prism.wpf\\8.1.97\\prism.wpf.8.1.97.nupkg.sha512"
   ],
