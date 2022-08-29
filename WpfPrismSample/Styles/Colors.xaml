@@ -3,7 +3,25 @@
     <Color x:Key="Gold">#FFD700</Color>
     <SolidColorBrush x:Key="GoldButtonForeground" Color="{StaticResource Gold}" />
     <SolidColorBrush x:Key="GoldButtonForegroundHover" Color="#181818" />
-
+    <!-- Alpha Button -->
+    <Color x:Key="AlphaDefaultBackground">#FFD8D8D8</Color>
+    <Color x:Key="AlphaDefaultForground">#FF121212</Color>
+    <Color x:Key="AlphaHoverBackground">#FFFFFFFF</Color>
+    <Color x:Key="AlphaHoverForground">#FF121212</Color>
+    <Color x:Key="AlphaPressedBackground">#FF9B9B9B</Color>
+    <Color x:Key="AlphaPressedForground">#FF121212</Color>
+    <Color x:Key="AlphaDisabledBackground">#FF4D4D4D</Color>
+    <Color x:Key="AlphaDisabledForground">#FF121212</Color>
+    <SolidColorBrush x:Key="AlphaDefaultForgroundBrush" Color="{StaticResource AlphaDefaultForground}" />
+    <SolidColorBrush x:Key="AlphaDefaultBorderBrush" Color="{StaticResource AlphaDefaultForground}" />
+    <SolidColorBrush x:Key="AlphaButton_Button_BG" Color="{StaticResource AlphaDefaultBackground}" />
+    <SolidColorBrush x:Key="AlphaDisabled_ButtonBG" Color="{StaticResource AlphaDisabledBackground}" />
+    <SolidColorBrush x:Key="AlphaDisabled_ButtonForeground" Color="{StaticResource AlphaDisabledBackground}" />
+    <SolidColorBrush x:Key="AlphaDisabled_ButtonBorder" Color="{StaticResource AlphaDisabledBackground}" />
+    <SolidColorBrush x:Key="AlphaHover_ButtonBackgroundBrush" Color="{StaticResource AlphaHoverBackground}" />
+    <SolidColorBrush x:Key="AlphaHover_ButtonForgroundBrush" Color="{StaticResource AlphaHoverForground}" />
+    <SolidColorBrush x:Key="AlphaPressed_ButtonBG" Color="{StaticResource AlphaPressedBackground}" />
+    <!--Beta Button -->
     <Color x:Key="BetaDefaultBackground">Transparent</Color>
     <Color x:Key="BetaDefaultForground">#FFD8D8D8</Color>
     <Color x:Key="BetaHoverBackground">#FF292929</Color>
@@ -16,18 +34,26 @@
     <Color x:Key="BetaHoverBorder">#FFFFFFFF</Color>
     <Color x:Key="BetaPressedBorder">#FF9B9B9B</Color>
     <Color x:Key="BetaDisabledBorder">#FF808080</Color>
-    <!--#region SecondaryButton Style-->
     <SolidColorBrush x:Key="BetaButton_Button_BG" Color="Transparent" />
     <SolidColorBrush x:Key="BetaPressed_ButtonBG" Color="#FF262626" />
     <SolidColorBrush x:Key="BetaHover_ButtonFG" Color="#FFD8D8D8" />
     <SolidColorBrush x:Key="BetaHover_ButtonBorderBrush" Color="#FFFFFFFF" />
     <SolidColorBrush x:Key="BetaHover_ButtonBackgroundBrush" Color="#FF292929" />
-    <SolidColorBrush x:Key="BetaDisabled_ButtonFG" Color="{StaticResource SecondaryDisabledForground}" />
-    <SolidColorBrush x:Key="BetaDisabled_ButtonBG" Color="{StaticResource SecondaryDisabledBackground}" />
-    <SolidColorBrush x:Key="BetaDisabled_BorderBrush" Color="{StaticResource SecondaryDisabledBorder}" />
+    <SolidColorBrush x:Key="BetaDisabled_ButtonFG" Color="{StaticResource BetaDisabledForground}" />
+    <SolidColorBrush x:Key="BetaDisabled_ButtonBG" Color="{StaticResource BetaDisabledBackground}" />
+    <SolidColorBrush x:Key="BetaDisabled_BorderBrush" Color="{StaticResource BetaDisabledBorder}" />
     <SolidColorBrush x:Key="BetaDefaultForgroundBrush" Color="#FFD8D8D8" />
     <SolidColorBrush x:Key="BetaDefaultBorderBrush" Color="#FFD8D8D8" />
-    <!--#endregion-->
+    <!--Gamma Button -->
+    <Color x:Key="GammaDefaultForground">#FFD8D8D8</Color>
+    <Color x:Key="GammaHoverForground">#FFFFFFFF</Color>
+    <Color x:Key="GammaPressedForground">#FF9B9B9B</Color>
+    <Color x:Key="GammaDisabledForground">#FF808080</Color>
+
+    <SolidColorBrush x:Key="GammaDefaultForgroundBrush" Color="{StaticResource GammaDefaultForground}" />
+    <SolidColorBrush x:Key="GammaHoverForgroundBrush" Color="{StaticResource GammaHoverForground}" />
+    <SolidColorBrush x:Key="GammaPressedForgroundBrush" Color="{StaticResource GammaPressedForground}" />
+    <SolidColorBrush x:Key="GammaDisabledForgroundBrush" Color="{StaticResource GammaDisabledForground}" />
     <!--Control colors.-->
     <Color x:Key="WindowColor">#FFE8EDF9</Color>
     <Color x:Key="ContentAreaColorLight">#FFC5CBF9</Color>

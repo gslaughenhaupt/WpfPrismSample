@@ -1,8 +1,12 @@
-﻿using Prism.Commands;
+﻿using Newtonsoft.Json;
+using Prism.Commands;
 using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
+using WpfPrismSample.Model;
 
 namespace WpfPrismSample.ViewModel
 {
@@ -26,9 +30,23 @@ namespace WpfPrismSample.ViewModel
             get => _alertText;
             set => SetProperty(ref _alertText, value);
         }
+        private ObservableCollection<Coin> _coinCollection = new ObservableCollection<Coin>();
+        public ObservableCollection<Coin> CoinCollection
+        {
+            get => _coinCollection;
+            set => SetProperty(ref _coinCollection, value);
+        }
         public MainViewModel()
         {
             Title = "WPF Style Samples";
+            getJson();
+        }
+        private void getJson()
+        {
+
+            var myDeserializedClass = JsonConvert.DeserializeObject<CoinRoot>(TestData.CoinJson);
+            if (myDeserializedClass == null) return;
+            CoinCollection.AddRange(myDeserializedClass.Data.Coins);
         }
     }
 }

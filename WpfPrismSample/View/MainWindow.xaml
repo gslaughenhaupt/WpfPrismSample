@@ -2,7 +2,7 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"
-        Title="{Binding Title}"
+        Title="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Center"
              >
     <Window.Background>
         <RadialGradientBrush>
@@ -11,12 +11,51 @@
         </RadialGradientBrush>
     </Window.Background>
     <Grid>
-        <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Left">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Name="TextAndButtons" Orientation="Vertical" Grid.Row="0" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left">
             <TextBlock Text="{Binding LongText}" Style="{StaticResource SubduedText}"  Margin="8" />
             <TextBlock Text="{Binding AlertText}" Style="{StaticResource AlertText}" Margin="8" />
-
-            <Button Content="Click Here" Style="{StaticResource GoldButton}" HorizontalAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20">
+                <Button x:Name="AlphaButton" Content="Click Here" Style="{StaticResource AlphaButtonStyle}"  HorizontalAlignment="Center" Margin="16"/>
+                <Button x:Name="BetaButton" Content="Click Here" Style="{StaticResource BetaButtonStyle}" Margin="16" HorizontalAlignment="Center"/>
+                <Button x:Name="GammaButton" Content="Click Here" Style="{StaticResource GammaButton}" HorizontalAlignment="Center" Margin="16"/>
+            </StackPanel>
+            <Button Content="Click Here" Style="{StaticResource GoldButtonStyle}" HorizontalAlignment="Center"/>
         </StackPanel>
 
+        <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" Margin="8,0">
+                    <TextBlock Text="COIN" Width="200" Style="{StaticResource CellText}"/>
+                    <TextBlock Text="PRICE" Style="{StaticResource CellText}"/>
+                </StackPanel>
+            <ScrollViewer Grid.Row="1" HorizontalAlignment="Left" Margin="8,16" Height="600" Style="{StaticResource ScrollViewerWideStyle}">
+                <ItemsControl x:Name="CryptoCoins" Grid.Row="1" ItemsSource="{Binding CoinCollection}" Width="500">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Width="500" Background="#CC016075" Margin="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock x:Name="CoinName" Text="{Binding Name}" Grid.Column="0" Style="{StaticResource CellText}"/>
+                            <TextBlock x:Name="CoinPrice" Text="{Binding Price}" Grid.Column="1" Style="{StaticResource CellText}"/>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+        
     </Grid>
 </Window>

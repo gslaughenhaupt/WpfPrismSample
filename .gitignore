@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/WpfPrismSample/obj/Debug/net6.0-windows
+*.vsidx
+*.v5
+*.v5
+.vs/ProjectEvaluation/wpfprismsample.metadata.v5
+.vs/ProjectEvaluation/wpfprismsample.projects.v5
+.vs/WpfPrismSample/DesignTimeBuild/.dtbcache.v2
+.vs/WpfPrismSample/v17/.futdcache.v2
+.vs/WpfPrismSample/v17/.suo
