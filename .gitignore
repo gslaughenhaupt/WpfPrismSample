@@ -11,3 +11,6 @@
 .vs/WpfPrismSample/DesignTimeBuild/.dtbcache.v2
 .vs/WpfPrismSample/v17/.futdcache.v2
 .vs/WpfPrismSample/v17/.suo
+*.v5
+*.v2
+.vs/WpfPrismSample/v17/.suo
