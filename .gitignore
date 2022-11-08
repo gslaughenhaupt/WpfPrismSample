@@ -14,3 +14,4 @@
 *.v5
 *.v2
 .vs/WpfPrismSample/v17/.suo
+/WpfPrismSample/bin/Debug/net6.0-windows
