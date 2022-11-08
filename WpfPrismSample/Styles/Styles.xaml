@@ -13,7 +13,7 @@
     </Style>
     <Style x:Key="AlertText" TargetType="TextBlock">
         <Setter Property="FontFamily" Value="Arial"/>
-        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontSize" Value="18"/>
         <Setter Property="Foreground" Value="Red"/>
         <Setter Property="Background" Value="LightGray"/>
         <Setter Property="MaxHeight" Value="80"/>
@@ -22,5 +22,356 @@
         <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
         <Setter Property="Padding" Value="8"/>
         <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=Text}"/>
+    </Style>
+    <Style x:Key="CellText" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Arial Rounded MT"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Foreground" Value="#DD80E7FF"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Padding" Value="8"/>
+        <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=Text}"/>
+    </Style>
+    <!-- FocusVisual -->
+
+    <Style x:Key="ButtonFocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Border>
+                        <Rectangle Margin="2"
+                     StrokeThickness="1"
+                     Stroke="#60000000"
+                     StrokeDashArray="1 2" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Button -->
+    <Style x:Key="MSExampleButton" TargetType="Button">
+        <Setter Property="SnapsToDevicePixels"
+          Value="true" />
+        <Setter Property="OverridesDefaultStyle"
+          Value="true" />
+        <Setter Property="FocusVisualStyle"
+          Value="{StaticResource ButtonFocusVisual}" />
+        <Setter Property="MinHeight"
+          Value="23" />
+        <Setter Property="MinWidth"
+          Value="75" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border TextBlock.Foreground="{TemplateBinding Foreground}"
+                x:Name="Border"
+                CornerRadius="2"
+                BorderThickness="1">
+                        <Border.BorderBrush>
+                            <LinearGradientBrush StartPoint="0,0"
+                                 EndPoint="0,1">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStopCollection>
+                                        <GradientStop Color="{DynamicResource BorderLightColor}"
+                                Offset="0.0" />
+                                        <GradientStop Color="{DynamicResource BorderDarkColor}"
+                                Offset="1.0" />
+                                    </GradientStopCollection>
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+
+                        </Border.BorderBrush>
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0.5,1"
+                                 StartPoint="0.5,0">
+                                <GradientStop Color="{DynamicResource ControlLightColor}"
+                            Offset="0" />
+                                <GradientStop Color="{DynamicResource ControlMediumColor}"
+                            Offset="1" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition GeneratedDuration="0:0:0.5" />
+                                    <VisualTransition GeneratedDuration="0"
+                                  To="Pressed" />
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).
+                      (GradientBrush.GradientStops)[1].(GradientStop.Color)"
+                                                Storyboard.TargetName="Border">
+                                            <EasingColorKeyFrame KeyTime="0"
+                                         Value="{StaticResource ControlMouseOverColor}" />
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).
+                      (GradientBrush.GradientStops)[1].(GradientStop.Color)"
+                                                Storyboard.TargetName="Border">
+                                            <EasingColorKeyFrame KeyTime="0"
+                                         Value="{StaticResource ControlPressedColor}" />
+                                        </ColorAnimationUsingKeyFrames>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.BorderBrush).
+                      (GradientBrush.GradientStops)[0].(GradientStop.Color)"
+                                                Storyboard.TargetName="Border">
+                                            <EasingColorKeyFrame KeyTime="0"
+                                         Value="{StaticResource PressedBorderDarkColor}" />
+                                        </ColorAnimationUsingKeyFrames>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.BorderBrush).
+                      (GradientBrush.GradientStops)[1].(GradientStop.Color)"
+                                                Storyboard.TargetName="Border">
+                                            <EasingColorKeyFrame KeyTime="0"
+                                         Value="{StaticResource PressedBorderLightColor}" />
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).
+                      (GradientBrush.GradientStops)[1].(GradientStop.Color)"
+                                                Storyboard.TargetName="Border">
+                                            <EasingColorKeyFrame KeyTime="0"
+                                         Value="{StaticResource DisabledControlDarkColor}" />
+                                        </ColorAnimationUsingKeyFrames>
+                                        <ColorAnimationUsingKeyFrames
+                      Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                                                Storyboard.TargetName="Border">
+                                            <EasingColorKeyFrame KeyTime="0"
+                                         Value="{StaticResource DisabledForegroundColor}" />
+                                        </ColorAnimationUsingKeyFrames>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.BorderBrush).
+                      (GradientBrush.GradientStops)[1].(GradientStop.Color)"
+                                                Storyboard.TargetName="Border">
+                                            <EasingColorKeyFrame KeyTime="0"
+                                         Value="{StaticResource DisabledBorderDarkColor}" />
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <ContentPresenter Margin="2"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            RecognizesAccessKey="True" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefault"
+                   Value="true">
+
+                            <Setter TargetName="Border"
+                    Property="BorderBrush">
+                                <Setter.Value>
+                                    <LinearGradientBrush StartPoint="0,0"
+                                     EndPoint="0,1">
+                                        <GradientBrush.GradientStops>
+                                            <GradientStopCollection>
+                                                <GradientStop Color="{DynamicResource DefaultBorderBrushLightBrush}"
+                                    Offset="0.0" />
+                                                <GradientStop Color="{DynamicResource DefaultBorderBrushDarkColor}"
+                                    Offset="1.0" />
+                                            </GradientStopCollection>
+                                        </GradientBrush.GradientStops>
+                                    </LinearGradientBrush>
+
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="GoldButtonStyle" TargetType="Button">
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}" />
+        <Setter Property="MinHeight" Value="30" />
+        <Setter Property="Height" Value="Auto" />
+        <Setter Property="MinWidth" Value="50" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Foreground" Value="{DynamicResource GoldButtonForeground}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                        x:Name="Border" Background="{DynamicResource BetaButton_Button_BG}" BorderBrush="{DynamicResource GoldButtonForeground}" BorderThickness="1" CornerRadius="6">
+                        <TextBlock
+                            Name="ButtonText" Margin="16,8" HorizontalAlignment="Center" VerticalAlignment="Center" AutomationProperties.Name="{Binding Source=Self, Path=Text}"
+                            FocusManager.IsFocusScope="True" Focusable="True" FontFamily="Arial" FontSize="12" FontWeight="Bold" Foreground="{DynamicResource GoldButtonForeground}"
+                            Text="{TemplateBinding Content}" TextWrapping="Wrap" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ButtonText" Property="Foreground" Value="{DynamicResource GoldButtonForegroundHover}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource GoldButtonForeground}" />
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource GoldButtonForeground}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource BetaPressed_ButtonBG}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="AlphaButtonStyle" TargetType="Button">
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}" />
+        <Setter Property="MinHeight" Value="30" />
+        <Setter Property="Height" Value="Auto" />
+        <Setter Property="MinWidth" Value="75" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Foreground" Value="{DynamicResource AlphaDefaultForgroundBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                        x:Name="Border" Background="{DynamicResource AlphaButton_Button_BG}" BorderBrush="{DynamicResource AlphaDefaultBorderBrush}" BorderThickness="1" CornerRadius="2">
+                        <TextBlock
+                            Name="ButtonText" Margin="20,10" HorizontalAlignment="Center" VerticalAlignment="Center" AutomationProperties.Name="{Binding Source=Self, Path=Text}"
+                            FocusManager.IsFocusScope="True" Focusable="True" FontFamily="Arial" FontSize="12" Foreground="{DynamicResource AlphaDefaultForgroundBrush}"
+                            Text="{TemplateBinding Content}" TextWrapping="Wrap" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ButtonText" Property="Foreground" Value="{DynamicResource AlphaHover_ButtonForgroundBrush}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource AlphaHover_ButtonForgroundBrush}" />
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource AlphaHover_ButtonBackgroundBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource AlphaPressed_ButtonBG}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+
+                            <Setter TargetName="ButtonText" Property="Foreground" Value="{DynamicResource AlphaDisabled_ButtonForeground}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource AlphaDisabled_ButtonBorder}" />
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource AlphaDisabled_ButtonBG}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="BetaButtonStyle" TargetType="Button">
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}" />
+        <Setter Property="MinHeight" Value="30" />
+        <Setter Property="Height" Value="Auto" />
+        <Setter Property="MinWidth" Value="75" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Foreground" Value="{DynamicResource BetaDefaultForgroundBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                        x:Name="Border" Background="{DynamicResource BetaButton_Button_BG}" BorderBrush="{DynamicResource BetaDefaultBorderBrush}" BorderThickness="1" CornerRadius="2">
+                        <TextBlock
+                            Name="ButtonText" Margin="20,10" HorizontalAlignment="Center" VerticalAlignment="Center" AutomationProperties.Name="{Binding Source=Self, Path=Text}"
+                            FocusManager.IsFocusScope="True" Focusable="True" FontFamily="Arial" FontSize="12" Foreground="{DynamicResource BetaDefaultForgroundBrush}"
+                            Text="{TemplateBinding Content}" TextWrapping="Wrap" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ButtonText" Property="Foreground" Value="{DynamicResource BetaHover_ButtonFG}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource BetaHover_ButtonFG}" />
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource BetaHover_ButtonBackgroundBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource BetaPressed_ButtonBG}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+
+                            <Setter TargetName="ButtonText" Property="Foreground" Value="{DynamicResource BetaDisabled_ButtonFG}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource BetaDisabled_BorderBrush}" />
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource BetaDisabled_ButtonBG}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="GammaButton" TargetType="Button">
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}" />
+        <Setter Property="MinHeight" Value="23" />
+        <Setter Property="MinWidth" Value="75" />
+        <Setter Property="Foreground" Value="{DynamicResource GammaDefaultForgroundBrush}" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                        x:Name="Border" Background="Transparent" BorderThickness="0" CornerRadius="2">
+                        <TextBlock
+                            x:Name="ButtonText" Margin="16,8" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Arial"
+                            FontSize="12" FontWeight="Bold" LineHeight="14" Text="{TemplateBinding Content}" />
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition GeneratedDuration="0:0:0" />
+                                    <VisualTransition GeneratedDuration="0" To="Pressed" />
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="Normal">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames
+                                            Storyboard.TargetName="ButtonText" Storyboard.TargetProperty="TextDecorations" Duration="0:0:0">
+                                            <ObjectAnimationUsingKeyFrames.KeyFrames>
+                                                <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <TextDecorationCollection>
+                                                            <TextDecoration Location="Underline" />
+                                                        </TextDecorationCollection>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames.KeyFrames>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames
+                                            Storyboard.TargetName="ButtonText" Storyboard.TargetProperty="TextDecorations" Duration="0:0:0">
+                                            <ObjectAnimationUsingKeyFrames.KeyFrames>
+                                                <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <TextDecorationCollection>
+                                                            <TextDecoration Location="Underline" />
+                                                        </TextDecorationCollection>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames.KeyFrames>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonText" Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{DynamicResource GammaHoverForgroundBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonText" Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{DynamicResource GammaPressedForgroundBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefault" Value="true" />
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource GammaDisabledForgroundBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 </ResourceDictionary>

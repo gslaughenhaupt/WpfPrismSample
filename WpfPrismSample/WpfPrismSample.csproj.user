@@ -12,6 +12,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Styles\Colors.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\ListViewStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\ScrollStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Styles\Styles.xaml">
       <SubType>Designer</SubType>
     </Page>
