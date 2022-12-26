@@ -70,8 +70,8 @@
                         <GridViewColumnHeader>Coin Price
                             <GridViewColumnHeader.ContextMenu>
                                 <ContextMenu >
-                                    <MenuItem Header="Ascending" />
-                                    <MenuItem Header="Descending" />
+                                    <MenuItem Header="Ascending" Command="{Binding AscendingCommand}" />
+                                    <MenuItem Header="Descending" Command="{Binding DescendingCommand}"/>
                                 </ContextMenu>
                             </GridViewColumnHeader.ContextMenu>
                         </GridViewColumnHeader>
