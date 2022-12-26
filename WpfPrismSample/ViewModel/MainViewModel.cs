@@ -39,13 +39,32 @@ namespace WpfPrismSample.ViewModel
             set => SetProperty(ref _coinCollection, value);
         }
         public ICollectionView CoinCollectionView { get; private set; }
+        public DelegateCommand AscendingCommand { get; }
+        public DelegateCommand DescendingCommand { get; }
         public MainViewModel()
         {
             Title = "WPF Style Samples";
             getJson();
-            CoinCollectionView = CollectionViewSource.GetDefaultView(CoinCollection);
-            CoinCollectionView.SortDescriptions.Add(new SortDescription(nameof(Coin.Name), ListSortDirection.Ascending));
+            CoinCollectionView = CollectionViewSource.GetDefaultView(CoinCollection);           
+            CoinCollectionView.SortDescriptions.Add(new SortDescription(nameof(Coin.Name), ListSortDirection.Descending));
+            AscendingCommand = new DelegateCommand(AscendingExecute);
+            DescendingCommand = new DelegateCommand(DescendingExecute);
         }
+
+        private void DescendingExecute()
+        {
+            CoinCollectionView.SortDescriptions.Clear();
+            CoinCollectionView.SortDescriptions.Add(new SortDescription(nameof(Coin.Name), ListSortDirection.Descending));
+            CoinCollectionView.Refresh();
+        }
+
+        private void AscendingExecute()
+        {
+            CoinCollectionView.SortDescriptions.Clear();
+            CoinCollectionView.SortDescriptions.Add(new SortDescription(nameof(Coin.Name), ListSortDirection.Ascending));
+            CoinCollectionView.Refresh();
+        }
+
         private void getJson()
         {
 
